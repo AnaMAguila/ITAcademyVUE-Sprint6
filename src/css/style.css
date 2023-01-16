@@ -21,3 +21,19 @@ button {
     width: 50%;
     padding: 20px;
 }
+
+.inici{
+    text-align: center;
+}
+
+.inici h1{
+    margin: 40px;
+}
+
+.inici p{
+    margin: 30px;
+}
+
+.inici button{
+    margin: 20px;
+}
