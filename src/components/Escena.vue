@@ -3,7 +3,10 @@
         <!-- Dejo las dos formas de leer el array: -->
         <!-- MUESTRA LOS DATOS DEL DATA HOME.VUE -->
         <ul>
-            <li v-for="text in frases" :key="text">
+            <li v-for="(text, index) in frases" 
+            :key="index"
+            :class="{ active: index === currentSentence}"
+            >
                 {{ text }}
             </li>
         </ul>
@@ -24,7 +27,7 @@
 
     export default {
         name: 'Escena',
-        props: ['frases']
+        props: ['frases','currentSentence']
         // MUESTRA LOS DATOS DEL ARCHIVO JSON  
         // computed: {
         //     // método donde obtengo el array de frases con map
@@ -34,21 +37,3 @@
         // }
     }
 </script>
-
-<!-- Hojas de estilo en carpeta css/style.css -->
-<!-- <style>
-    ul {
-        list-style: none;
-        margin : 0;
-        padding: 0;
-    }
-
-    li {
-        margin: 15px;
-        padding: 15px;
-        text-align: center;
-        border: 2px solid #000;
-        border-radius: 30px;
-        background-color: #fff;
-    }
-</style> -->
