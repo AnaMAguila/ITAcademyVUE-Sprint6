@@ -1,39 +1,21 @@
 <template>
     <div>
-        <!-- Dejo las dos formas de leer el array: -->
-        <!-- MUESTRA LOS DATOS DEL DATA HOME.VUE -->
+        <!-- MUESTRA LOS DATOS DEL ARCHIVO JSON (Ahora js)  -->            
         <ul>
-            <li v-for="(text, index) in frases" 
+            <li v-for="(text, index) in arrayFrases" 
             :key="index"
             :class="{ active: index === currentSentence}"
             >
-                {{ text }}
+                {{ text.txt }}
             </li>
         </ul>
-
-        <!-- MUESTRA LOS DATOS DEL ARCHIVO JSON  -->            
-        <!-- <ul>
-            <li v-for="text in obtenFrases" :key="text">
-                {{ text }}
-            </li>
-        </ul> -->
    
     </div>
 </template>
 
 <script>
-    // IMPORTA LOS DATOS DEL ARCHIVO JSON  
-    // import arrayFrases from '../data/frases.json';
-
     export default {
         name: 'Escena',
-        props: ['frases','currentSentence']
-        // MUESTRA LOS DATOS DEL ARCHIVO JSON  
-        // computed: {
-        //     // método donde obtengo el array de frases con map
-        //     obtenFrases() {
-        //         return arrayFrases.map((item) => item)
-        //     }
-        // }
+        props: ['arrayFrases','currentSentence'],
     }
 </script>
